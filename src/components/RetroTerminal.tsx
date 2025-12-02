@@ -326,7 +326,7 @@ const RetroTerminal = () => {
           </div>
 
           {/* Control panel */}
-          <div className="flex items-center justify-between mt-6 px-4">
+          <div className="flex items-center justify-between mt-6 px-4 relative z-10">
             {/* Sound toggle - left */}
             <button
               onClick={() => setSoundOn(!soundOn)}
