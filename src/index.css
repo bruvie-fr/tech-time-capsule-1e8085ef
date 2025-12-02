@@ -210,3 +210,22 @@
 .stagger-3 { animation-delay: 0.3s; }
 .stagger-4 { animation-delay: 0.4s; }
 .stagger-5 { animation-delay: 0.5s; }
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.05; }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Hide default cursor when pixel cursor is active */
+.pixel-cursor-active {
+  cursor: none;
+}
+
+.pixel-cursor-active * {
+  cursor: none !important;
+}
