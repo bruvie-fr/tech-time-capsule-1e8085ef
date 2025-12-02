@@ -1,8 +1,12 @@
+import { useState } from "react";
 import Hero from "@/components/Hero";
 import DecadeNav from "@/components/DecadeNav";
 import DecadeSection from "@/components/DecadeSection";
 import TimelineCard from "@/components/TimelineCard";
 import Footer from "@/components/Footer";
+import RetroTerminal from "@/components/RetroTerminal";
+import EasterEggs from "@/components/EasterEggs";
+import PixelCursor from "@/components/PixelCursor";
 
 const timelineData = {
   "1920s": [
@@ -86,8 +90,22 @@ const timelineData = {
 };
 
 const Index = () => {
+  const [pixelCursor, setPixelCursor] = useState(false);
+
   return (
-    <main className="min-h-screen bg-background scanline">
+    <main className={`min-h-screen bg-background scanline ${pixelCursor ? 'pixel-cursor-active' : ''}`}>
+      <EasterEggs />
+      {pixelCursor && <PixelCursor />}
+      
+      {/* Retro cursor toggle */}
+      <button
+        onClick={() => setPixelCursor(!pixelCursor)}
+        className="fixed bottom-4 right-4 z-50 px-3 py-2 glass rounded-lg font-mono text-xs text-muted-foreground hover:text-primary transition-colors"
+        title="Toggle retro cursor"
+      >
+        {pixelCursor ? "🖱️ Normal" : "👾 Retro"}
+      </button>
+      
       <Hero />
       <DecadeNav />
 
@@ -133,6 +151,8 @@ const Index = () => {
         </DecadeSection>
       </div>
 
+      <RetroTerminal />
+      
       <Footer />
     </main>
   );
