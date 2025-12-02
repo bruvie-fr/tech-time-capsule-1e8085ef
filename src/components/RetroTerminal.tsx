@@ -356,8 +356,8 @@ const RetroTerminal = () => {
               onClick={handlePowerToggle}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg font-mono text-xs uppercase tracking-wider transition-all ${
                 isOn
-                  ? "bg-red-900/80 text-red-300 border border-red-500/50 hover:bg-red-800/80"
-                  : "bg-primary/20 text-primary hover:bg-primary/30 animate-pulse"
+                  ? "bg-red-600 text-white border border-red-400 hover:bg-red-500"
+                  : "bg-amber-500 text-black hover:bg-amber-400 animate-pulse"
               }`}
             >
               <Power className="w-4 h-4" />
