@@ -100,10 +100,11 @@ const Index = () => {
       {/* Retro cursor toggle */}
       <button
         onClick={() => setPixelCursor(!pixelCursor)}
-        className="fixed bottom-4 right-4 z-50 px-3 py-2 glass rounded-lg font-mono text-xs text-muted-foreground hover:text-primary transition-colors"
+        className="fixed bottom-4 right-4 lg:bottom-4 lg:right-4 z-50 px-3 py-2 glass rounded-lg font-mono text-xs text-muted-foreground hover:text-primary transition-colors hidden lg:flex items-center gap-2"
         title="Toggle retro cursor"
       >
-        {pixelCursor ? "🖱️ Normal" : "👾 Retro"}
+        <span className="w-2 h-2 rounded-full bg-current animate-pulse" />
+        {pixelCursor ? "Normal" : "Retro"}
       </button>
       
       <Hero />
