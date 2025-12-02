@@ -66,43 +66,46 @@ const TimelineCard = ({
         }`}
         style={{ transitionDelay: `${index * 100}ms` }}
       >
-        <article className="glass-hover rounded-xl p-6 md:p-8 group">
+        <article className="glass-hover rounded-xl p-6 md:p-8 group relative overflow-hidden">
+          {/* Decorative corner accent */}
+          <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          
           {/* Year badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 border border-primary/30 rounded-full mb-4">
             <Calendar className="w-3 h-3 text-primary" />
             <span className="font-mono text-sm text-primary font-bold">{year}</span>
           </div>
 
           {/* Title */}
-          <h3 className="font-display text-2xl md:text-3xl text-foreground mb-4 group-hover:text-gradient transition-all">
+          <h3 className="font-display text-2xl md:text-3xl text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
             {title}
           </h3>
 
           {/* Creator */}
           {creator && (
             <div className="flex items-center gap-2 text-muted-foreground mb-4">
-              <User className="w-4 h-4" />
+              <User className="w-4 h-4 text-accent" />
               <span className="font-mono text-sm">{creator}</span>
             </div>
           )}
 
           {/* Description */}
-          <p className="text-muted-foreground leading-relaxed mb-4">
+          <p className="text-muted-foreground leading-relaxed mb-5">
             {description}
           </p>
 
           {/* Significance */}
           {significance && (
-            <div className="flex items-start gap-3 p-4 bg-accent/5 border border-accent/20 rounded-lg mb-4">
+            <div className="flex items-start gap-3 p-4 bg-accent/5 border border-accent/20 rounded-lg mb-5 group-hover:border-accent/40 transition-colors">
               <Cpu className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-foreground/80">{significance}</p>
+              <p className="text-sm text-foreground/80 leading-relaxed">{significance}</p>
             </div>
           )}
 
           {/* Source */}
-          <div className="flex items-center gap-2 text-muted-foreground/60 text-xs font-mono">
+          <div className="flex items-center gap-2 text-muted-foreground/50 text-xs font-mono pt-4 border-t border-border/30">
             <ExternalLink className="w-3 h-3" />
-            <span className="truncate">{source}</span>
+            <span className="truncate">Source: {source}</span>
           </div>
         </article>
       </div>

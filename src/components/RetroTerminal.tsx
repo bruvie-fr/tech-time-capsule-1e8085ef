@@ -218,13 +218,17 @@ const RetroTerminal = () => {
   }, [isOn, isBooting]);
 
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-4xl mx-auto text-center mb-12">
-        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
+    <section className="py-24 md:py-32 px-4 relative">
+      {/* Background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/5 blur-[150px] pointer-events-none" />
+      
+      <div className="max-w-4xl mx-auto text-center mb-16 relative">
+        <span className="font-mono text-xs text-accent tracking-widest uppercase mb-4 block">Interactive Experience</span>
+        <h2 className="font-display text-4xl md:text-6xl text-foreground mb-6">
           Experience the <span className="text-gradient">Past</span>
         </h2>
-        <p className="font-mono text-muted-foreground">
-          Interact with a simulated retro terminal from the early computing era
+        <p className="font-mono text-muted-foreground max-w-lg mx-auto">
+          Interact with a simulated retro terminal from the early computing era. Type <span className="text-primary">HELP</span> to begin.
         </p>
       </div>
 
